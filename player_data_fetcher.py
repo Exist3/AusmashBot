@@ -1,8 +1,9 @@
 from discord.ext.commands import Bot
 from discord import Game
+import os
 
 BOT_PREFIX = "?"
-TOKEN = "NTk3MDc0Njg0MjM5OTM3NTQ2.XSCzyA.sEfdg0OhySA88n4gD3L-KIw2gR4"
+TOKEN = os.environ.get("TOKEN")
 
 client = Bot(command_prefix=BOT_PREFIX,
              activity=Game(name="type " + BOT_PREFIX + "help for help"))
