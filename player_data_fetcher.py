@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from discord.ext.commands import Bot
 from discord import Game
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
+from os import path
+import sys
+sys.path.append(path.abspath('../AusmashPy'))
 import api_requests as api
 
-load_dotenv()
+#load_dotenv()
 BOT_PREFIX = "?"
 TOKEN = os.environ.get("AUSMASH_DISCORD_BOT_TOKEN")
 GAME = api.Game(13)
