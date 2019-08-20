@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from discord.ext.commands import Bot
 from discord import Game
 from dotenv import load_dotenv
@@ -6,8 +7,7 @@ import api_requests as api
 
 load_dotenv()
 BOT_PREFIX = "?"
-TOKEN = os.environ.get("TOKEN")
-
+TOKEN = os.environ.get("AUSMASH_DISCORD_BOT_TOKEN")
 GAME = api.Game(13)
 
 REGIONS = []
