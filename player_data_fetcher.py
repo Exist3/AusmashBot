@@ -45,7 +45,8 @@ async def on_ready():
     print('------')
 
 
-@client.command()
+@client.command(brief='Checks a players elo',
+                description='Checks a players Super Smash Bros Ultimate. elo as seen on ausmash.com')
 async def elo(ctx, player_name=None, player_region=None):
     if player_name is None or player_region is None:
         await ctx.send("Please ensure you use the following format: \n" +
@@ -63,7 +64,9 @@ async def elo(ctx, player_name=None, player_region=None):
     await ctx.send("{} from {} has no recorded elo data for {}".format(player.name, region.name, GAME.name))
 
 
-@client.command()
+@client.command(name='ts',
+                brief='Checks a players trueskill',
+                description='Checks a players Super Smash Bros Ultimate. trueskill as seen on ausmash.com')
 async def trueskill(ctx, player_name=None, player_region=None):
     if player_name is None or player_region is None:
         await ctx.send("Please ensure you use the following format: \n" +
@@ -81,8 +84,10 @@ async def trueskill(ctx, player_name=None, player_region=None):
     await ctx.send("{} from {} has no recorded trueskill rating for {}".format(player.name, region.name, GAME.name))
 
 
-@client.command()
-async def stats(ctx, player_name_1=None, player_region_1=None, player_name_2=None, player_region_2=None):
+@client.command(name='cs',
+                brief='Compares the results of matches between two players',
+                description='Compares a players wins, losses, and win percentage against another player.')
+async def comparestats(ctx, player_name_1=None, player_region_1=None, player_name_2=None, player_region_2=None):
     if player_name_1 is None or player_region_1 is None or player_name_2 is None or player_region_2 is None:
         await ctx.send("Please ensure you use the following format: \n" +
                        BOT_PREFIX + "stats <player> <region> <player2> <region2>")
