@@ -48,9 +48,6 @@ async def on_ready():
 @client.command(brief='Checks a players elo',
                 description='Checks a players Super Smash Bros Ultimate. elo as seen on ausmash.com')
 async def elo(ctx, player_name=None, player_region=None):
-    if player_name == "Chingus":
-        await ctx.send("Chingus from Qld has a GSP that's higher than yours.")
-        return
     if player_name is None or player_region is None:
         await ctx.send("Please ensure you use the following format: \n" +
                        BOT_PREFIX + "elo <player> <region>")
